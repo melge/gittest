@@ -1,0 +1,47 @@
+Name        B14020414;
+Partno      1;
+Revision    1;
+Date        2016-11-1;
+Designer    HaibaraRui;
+Company     NUPT;
+Assembly    NULL;
+Location    NULL;
+Device      g16v8;
+Format      Undefined;
+--------------bianyi
+PIN 1=CLK;
+PIN 2=RESET;
+PIN 3=AJ;
+	PIN 5=Q2;
+	PIN 6=Q8;
+PIN 5=F3;
+PIN 6=F2;
+PIN 7=F1;
+PIN 11=!OE;
+PIN 12=T3;
+PIN 13=T1;
+PIN 14=T0;
+PIN 15=L2;
+PIN 16=L1;
+PIN 17=CP;
+PIN 18=T4;
+PIN 19=T2;
+
+/** Declarations and Intermediate Variables  **/
+T0.D=A0;
+T1.D=A1;
+T2.D=A2;
+T3.D=A3;
+T4.D=A4;
+CP.D=A5;
+
+/** Logic Equations **/
+A0=T4&RESET&Q8#!RESET;
+A1=(T0#T1&!AJ)&RESET;
+A2=(T1&AJ#T2&!Q2)&RESET;
+A3=(T2&Q2#T3&!AJ)&RESET;
+A4=(T3&AJ#T4&!Q8)&RESET;
+A5=!CP;
+
+L1=T1#T4&F2&!Q8&CP#T4&F1&!Q8&CP;
+L2=T3#T4&F2&!Q8&!CP#T4&F3&!Q8&CP;
