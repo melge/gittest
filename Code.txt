@@ -1,0 +1,304 @@
+Module DS02
+Compare device g16v8;
+
+/**  output  **/
+pin[1,11]=[clk,!E0];
+Pin 2	=	Reset;
+Pin 3	=	Aj;
+
+Pin 5	=	AAB;
+Pin 6	=	AB;
+Pin 7	=	ABB;
+Pin 8	=	Time;
+Pin 9	=	Clk_1;
+
+/**  output  **/
+Pin 12	=	PP;
+Pin 13	=	L2;
+Pin 14	=	L1;
+Pin 15	=	M2;
+Pin 16	=	M1;
+Pin 17	=	Selc;
+Pin 18	=	Clr;
+Pin 19	=	OE;
+
+M1=T0;
+M2=T1;
+PP=T4;
+L1=((!(T0#T1))&Clk_1&(!ABB))#T0;
+L2=((!(T0#T1))&(!Clk_1)&(ABB))#T1;
+Clr=!(Time#(!Reset));
+Selc=AAB;
+OE=!T4;
+T0=((T0+T1+T2+T3+T4)&(!Clr))#(T0&Clr&(Aj))#(T4&Clr&Time);
+T1=(T0&TClr&Aj)#(T1&Clr&Aj);
+T2=(T1#T2)&Clr&(!Aj);
+T3=(T2#T3)&Clr&Aj;
+T4=((T3&(!Aj))#(T4&(!(Time)))&Clr;
+
+
+
+
+--------------------------
+
+
+
+Name        PLDDesign            ;
+Partno                           ;
+Revision    1                    ;
+Date        2017-11-3            ;
+Designer                         ;
+Company     Protel International ;
+Assembly                         ;
+Location                         ;
+Device                           ;
+Format                           ;
+
+/*********************************************************************/
+/* This PLD design (Revision 1) created on 2017-11-3                 */
+/*      for                   Protel International                   */
+/*      and is stored as      PLDDesign                              */
+/*********************************************************************/
+
+/** Inputs  **/
+pin[1,11]=[clk,!E0];
+Pin 2	=	Reset;
+Pin 3	=	Aj;
+
+Pin 5	=	AAB;
+Pin 6	=	AB;
+Pin 7	=	ABB;
+Pin 8	=	Time;
+Pin 9	=	Clk_1;
+
+/** Outputs **/
+Pin 12	=	PP;
+Pin 13	=	L2;
+Pin 14	=	L1;
+Pin 15	=	M2;
+Pin 16	=	M1;
+Pin 17	=	Selc;
+Pin 18	=	Clr;
+Pin 19	=	OE;
+
+
+
+M1=T0;
+M2=T1;
+PP=T4;
+L1=((!(T0#T1))&Clk_1&(!ABB))#T0;
+L2=((!(T0#T1))&(!Clk_1)&(ABB))#T1;
+Clr=!(Time#(!Reset));
+Selc=AAB;
+OE=!T4;
+T0=((T0#T1#T2#T3#T4)&(!Clr))#(T0&Clr&(Aj))#(T4&Clr&Time);
+T1=(T0&Clr&Aj)#(T1&Clr&Aj);
+T2=(T1#T2)&Clr&(!Aj);
+T3=(T2#T3)&Clr&Aj;
+T4=((T3&(!Aj))#(T4&(!(Time)))&Clr;
+
+=========================================
+
+
+
+Name        PLDDesign            ;
+Partno                           ;
+Revision    1                    ;
+Date        2017-11-3            ;
+Designer                         ;
+Company     Protel International ;
+Assembly                         ;
+Location                         ;
+Device                           ;
+Format                           ;
+
+/*********************************************************************/
+/* This PLD design (Revision 1) created on 2017-11-3                 */
+/*      for                   Protel International                   */
+/*      and is stored as      PLDDesign                              */
+/*********************************************************************/
+
+/** Inputs  **/
+pin 1= clk;  
+Pin 2	=	Rst;
+Pin 3	=	Aj;
+
+Pin 5	=	AAB;
+Pin 6	=	AB;
+Pin 7	=	ABB;
+Pin 8	=	Time;
+Pin 9	=	Clk_1;
+
+/** Outputs **/
+pin 11=!E0;
+Pin 12	=	PP;
+Pin 13	=	L2;
+Pin 14	=	L1;
+Pin 15	=	M2;
+Pin 16	=	M1;
+Pin 17	=	Selc;
+Pin 18	=	Clr;
+Pin 19	=	OE;
+
+
+
+M1=T0;
+M2=T1;
+PP=T4;
+L1=((!(T0#T1))&Clk_1&(!ABB))#T0;
+L2=((!(T0#T1))&(!Clk_1)&(ABB))#T1;
+Clr=!(Time#(!Rst));
+Selc=AAB;
+OE=!T4;
+T0.D=((T0#T1#T2#T3#T4)&(!Rst))#(T0&Rst&(Aj))#(T4&Rst&Time);
+/*T1=(T0&Clr&Aj)#(T1&Clr&Aj);*/
+T1.D=(T0&Rst&Aj)#(T1&Rst&Aj);
+/*T2=(T1#T2)&Clr&(!Aj);*/
+T2.D=(T1&Rst&!Aj)#(T2&Rst&!Aj);
+/*T3=(T2#T3)&Clr&Aj;*/ 
+T3.D=(T2&Rst&Aj)#(T3&Rst&Aj);
+/*T4=((T3&!Aj)#(T4&!Time))&Clr;*/
+T4.D=(T3&Rst&!Aj)#(T4&Rst&!Time); 
+
+
+
+================================
+
+
+
+
+
+
+Name        PLDDesign            ;
+Partno                           ;
+Revision    1                    ;
+Date        2017-11-3            ;
+Designer                         ;
+Company     Protel International ;
+Assembly                         ;
+Location                         ;
+Device                           ;
+Format                           ;
+
+/*********************************************************************/
+/* This PLD design (Revision 1) created on 2017-11-3                 */
+/*      for                   Protel International                   */
+/*      and is stored as      PLDDesign                              */
+/*********************************************************************/
+
+/** Inputs  **/
+pin 1= clk;  
+Pin 2	=	Rst;
+Pin 3	=	Aj;
+
+Pin 5	=	AAB;
+Pin 6	=	AB;
+Pin 7	=	ABB;
+Pin 8	=	Time;
+Pin 9	=	Clk_1;
+
+/** Outputs **/
+pin 11=!E0;
+Pin 12	=	PP;
+Pin 13	=	L2;
+Pin 14	=	L1;
+Pin 15	=	M2;
+Pin 16	=	M1;
+Pin 17	=	Selc;
+Pin 18	=	Clr;
+Pin 19	=	OE;
+
+A0=T0;
+A1=T1;
+A2=T2;
+A3=T3; 
+A4=T4; 
+ 
+M1=A0;
+M2=A1;
+PP=A4;
+L1=((!(A0#T1))&Clk_1&(!ABB))#T0;
+L2=((!(A0#T1))&(!Clk_1)&(ABB))#T1;
+Clr=!(Time#(!Rst));
+Selc=AAB;
+OE=!A4;
+T0.D=((A0#A1#A2#A3#A4)&(!Rst))#(A0&Rst&(Aj))#(A4&Rst&Time)#Rst;
+/*T1=(T0&Clr&Aj)#(T1&Clr&Aj);*/
+T1.D=(A0&Rst&Aj)#(A1&Rst&Aj);
+/*T2=(T1#T2)&Clr&(!Aj);*/
+T2.D=(A1&Rst&!Aj)#(A2&Rst&!Aj);
+/*T3=(T2#T3)&Clr&Aj;*/ 
+T3.D=(A2&Rst&Aj)#(A3&Rst&Aj);
+/*T4=((T3&!Aj)#(T4&!Time))&Clr;*/
+T4.D=(A3&Rst&!Aj)#(A4&Rst&!Time); 
+
+
+=======================================
+
+
+
+
+Name        PLDDesign            ;
+Partno                           ;
+Revision    1                    ;
+Date        2017-11-3            ;
+Designer                         ;
+Company     Protel International ;
+Assembly                         ;
+Location                         ;
+Device                           ;
+Format                           ;
+
+/*********************************************************************/
+/* This PLD design (Revision 1) created on 2017-11-3                 */
+/*      for                   Protel International                   */
+/*      and is stored as      PLDDesign                              */
+/*********************************************************************/
+
+/** Inputs  **/
+pin 1= clk;  
+Pin 2	=	Rst;
+Pin 3	=	Aj;
+
+Pin 5	=	AAB;
+Pin 6	=	AB;
+Pin 7	=	ABB;
+Pin 8	=	Time;
+Pin 9	=	Clk_1;
+
+/** Outputs **/
+pin 11=!E0;
+Pin 12	=	T4;
+Pin 13	=	L2;
+Pin 14	=	L1;
+Pin 15	=	T1;
+Pin 16	=	T0;
+/**Pin 17	=	T4;**/
+Pin 18	=	Clr;
+Pin 19	=	T3;
+
+
+
+/**M1=T0;
+M2=T1;**/ 
+/**PP=T4;**/ 
+L1=((!(T0#T1))&Clk_1&(!ABB))#T0;
+L2=((!(T0#T1))&(!Clk_1)&(ABB))#T1;
+Clr=!(Time#(!Rst));
+/**Selc=AAB;**/ 
+/**OE=!T4;**/ 
+
+T0.D=((T0#T1#T2#T3#T4)&(!Rst))#(T0&Rst&(Aj))#(T4&Rst&Time);
+/*T1=(T0&Clr&Aj)#(T1&Clr&Aj);*/
+T1.D=(T0&Rst&Aj)#(T1&Rst&Aj);
+/*T2=(T1#T2)&Clr&(!Aj);*/
+T2.D=(T1&Rst&!Aj)#(T2&Rst&!Aj);
+/*T3=(T2#T3)&Clr&Aj;*/ 
+T3.D=(T2&Rst&Aj)#(T3&Rst&Aj);
+/*T4=((T3&!Aj)#(T4&!Time))&Clr;*/
+T4.D=(T3&Rst&!Aj)#(T4&Rst&!Time); 
+
+
+
+
+-------------------
