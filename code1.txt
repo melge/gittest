@@ -1,0 +1,60 @@
+LISTING FOR LOGIC DESCRIPTION FILE: PldDesign1.pld                   Page 1
+
+ADVANCED PLD: Universal Compiler for Programmable Logic
+Version 4.0 Serial# MW-67999999
+Copyright (c) 1998, Protel International Pty Ltd
+Created 星期五 十一月 03 14:33:00 2017
+
+  1:Name        yyy                  ;
+  2:Partno                           ;
+  3:Revision    1                    ;
+  4:Date        2017-11-3            ;
+  5:Designer                         ;
+  6:Company     Protel International ;
+  7:Assembly                         ;
+  8:Location                         ;
+  9:Device      g16v8                ;
+ 10:Format                           ;
+ 11:
+ 12:/*********************************************************************/
+ 13:/* This PLD design (Revision 1) created on 2017-11-3                 */
+ 14:/*      for                   Protel International                   */
+ 15:/*      and is stored as      PLDDesign                              */
+ 16:/*********************************************************************/
+ 17:
+ 18:/** Inputs  **/
+ 19:Pin 1   =  CLK;
+ 20:Pin 2   =  RE;
+ 21:Pin 3   =  AJ;
+ 22:Pin 4   =  S8;
+ 23:Pin 5   =  FA;
+ 24:Pin 6   =  FB;
+ 25:Pin 7   =  FAB;
+ 26:Pin 8   =  CPP;
+ 27:
+ 28:/** Outputs **/
+ 29:Pin 12  =  T0;
+ 30:Pin 13  =  T1;
+ 31:Pin 14  =  T2;
+ 32:Pin 15  =  T3;
+ 33:Pin 16  =  L1;
+ 34:Pin 17  =  L2; 
+ 35:
+ 36:/** Declarations and Intermediate Variables  **/
+ 37:
+ 38:/** Logic Equations **/
+ 39:T0.D=T3&S8#!RE; 
+ 40:T1.D=(T0#T1&!AJ)&RE;
+ 41:T2.D=(T1&AJ#T2&!AJ)&RE;
+ 42:T3.D=(T2&AJ#T3&!S8)&RE;
+ 43:L1=T1#(T3&FA&!S8&CPP)#(T3&FAB&!S8&CPP);
+ 44:L2=T2#(T3&FB&!S8&CPP)#(T3&FAB&!S8&!CPP);  
+ 45:
+ 46:
+ 47:
+ 48:
+
+
+
+Jedec Fuse Checksum       (46f8)
+Jedec Transmit Checksum   (f170)
