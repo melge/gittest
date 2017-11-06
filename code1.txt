@@ -26,7 +26,7 @@ Created 星期五 十一月 03 14:33:00 2017
  19:Pin 1   =  CLK;
  20:Pin 2   =  RE;
  21:Pin 3   =  AJ;
- 22:Pin 4   =  S8;
+ 22:Pin 4   =  S8;  f
  23:Pin 5   =  FA;
  24:Pin 6   =  FB;
  25:Pin 7   =  FAB;
